@@ -1,0 +1,15 @@
+{:deps
+ {io.github.phronmophobic/easel {:git/sha "e9861202abb8a8d6ade98b8cb4c2211c0151cdd9"}
+  ;; dependending on membrane version explicitly to avoid: Error building classpath. Unable to compare versions ...
+  com.phronemophobic/membrane {:git/sha "6e5b0473b3efda978e24876f241f30fcae5a5990"
+                               :git/url "https://github.com/phronmophobic/membrane"}}
+
+ :mvn/repos
+ ;; needed for pty4j which is used by membrane.term
+ {"jetbrains-intellij-dependencies" {:url "https://packages.jetbrains.team/maven/p/ij/intellij-dependencies"}}
+
+ :aliases
+ {:local-deps
+  {:override-deps
+   {io.github.phronmophobic/easel {:local/root "../easel"}
+    com.phronemophobic/membrane {:local/root "../membrane"}}}}}

@@ -1,0 +1,2 @@
+{:lint-as {membrane.component/defui clojure.core/defn
+           membrane.skia/defc clj-kondo.lint-as/def-catch-all}}
