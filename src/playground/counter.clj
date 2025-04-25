@@ -1,6 +1,5 @@
 (ns playground.counter
   (:require
-   [membrane.java2d :as java2d]
    [membrane.ui :as ui]
    [membrane.component :as component :refer [defui defeffect]]
    [com.phronemophobic.easel :as easel]
@@ -18,8 +17,6 @@
   (dispatch! :update $num inc))
 
 (comment
-  (java2d/run (component/make-app #'counter {:num 10}))
-
   (easel/add-component-as-applet #'counter {:num 1})
 
   (easel/add-component!
