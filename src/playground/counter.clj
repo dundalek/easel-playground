@@ -4,7 +4,8 @@
    [membrane.ui :as ui]
    [membrane.component :as component :refer [defui defeffect]]
    [com.phronemophobic.easel :as easel]
-   [com.phronemophobic.schematic.model :as sm]))
+   [com.phronemophobic.schematic.model :as sm]
+   [com.phronemophobic.schematic.view.component-picker :as component-picker]))
 
 (defui counter [{:keys [num]}]
   (ui/horizontal-layout
@@ -26,7 +27,7 @@
    (fn [] {:element/type ::sm/defui
            :element/name "counter"
            :element/function #'counter
-           :element/data {:num 5}
+           :element/data {:num (component-picker/->code 5)}
            :element/id (random-uuid)}))
 
   (tap> {:num 2}))
